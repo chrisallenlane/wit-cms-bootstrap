@@ -12,6 +12,6 @@
   "dependencies": {
     "express": "3.4.4",
     "ejs": "0.8.5",
-    "wit-cms": "1.0.0"
+    "wit-cms": "*"
   }
 }
