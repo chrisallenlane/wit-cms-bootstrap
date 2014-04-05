@@ -1,0 +1,40 @@
+<% include partial/header %>
+
+<h1 class='context'>Archive:
+  <%= date.year %>
+
+  <% if(date.month) { %>
+  / <%= date.month %>
+  <% } %>
+
+  <% if(date.day) { %>
+  / <%= date.day %>
+  <% } %>
+</h1>
+
+<% if (posts.length === 0) { %>
+
+  <article>
+    <p>No posts found</p>
+  </article>
+
+<% } else { %>
+
+  <% posts.forEach(function(post) { %>
+    <article>
+      <hgroup>
+        <h1><a href='<%= post.url %>'><%= post.title %></a></h1>
+        <time datetime='<%= post.date.datetime %>'><%= post.date.pretty %></time>
+      </hgroup>
+
+      <%- post.excerpt %>
+
+      <p><a href='<%= post.url %>'>Read More</a>
+    </article>
+  <% }); %>
+
+<% } %>
+
+<% include partial/next-previous %>
+
+<% include partial/footer %>

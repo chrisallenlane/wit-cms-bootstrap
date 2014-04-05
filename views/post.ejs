@@ -1,0 +1,17 @@
+<% include partial/header %>
+
+  <article>
+    <hgroup>
+      <h1><%= post.title %></h1>
+      <time datetime='<%= post.date.datetime %>'><%= post.date.pretty %></time>
+    </hgroup>
+
+    <%- post.content %>
+
+  </article>
+
+<% if (env === 'production') { %>
+<% include partial/disqus %>
+<% } %>
+
+<% include partial/footer %>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class='no-js'>
+  <head>
+    <title><%= title %></title>
+    <meta charset='utf-8'>
+    <meta name='viewport'  content='width=device-width'>
+    <meta name='author'    content='<%= site.author %>'>
+    <% if (typeof description !== 'undefined') {%>
+    <meta name='description' content='<%= description %>'>
+    <% } %>
+    <meta name="generator" content="wit-cms">
+    <link rel='alternate'  type='application/rss+xml' title='RSS Feed' href='/feed'>
+    <% if (typeof canonicalUrl !== 'undefined') { %>
+    <link rel='canonical'  href='<%= site.fqdn %><%= canonicalUrl %>'>
+    <% } %>
+    <link rel='stylesheet' href='/stylesheets/normalize.css'>
+    <link rel='stylesheet' href='/stylesheets/main.css'>
+    <link rel='stylesheet' href='/stylesheets/mobile.css' media='(max-device-width: 640px)'>
+  </head>
+
+  <body class='<%= bodyClass %>'>
+    <div id='container'>
+
+      <header id='masthead'>
+        <h1><a href='/'><%= site.name%></a>
+          <span><%= site.tagLine %></span>
+        </h1>
+
+        <nav>
+          <a href='/about'>About</a>
+          <a href='/'>Blog</a>
+          <a href='/contact'>Contact</a>
+
+          <input id='search' type='search' placeholder='search'>
+          <a id='close-search' href='javascript:void(0)'>[close search]</a>
+        </nav>
+      </header>
+
+      <main>

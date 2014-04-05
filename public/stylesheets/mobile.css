@@ -1,0 +1,51 @@
+aside {
+  clear   : both;
+  float   : none;
+  margin  : 0;
+  padding : 0 0 10% 0;
+  width   : 100%;
+}
+
+aside section.about,
+aside section.archive {
+  display: none;
+}
+
+aside section.categories ul li,
+aside section.tags ul li {
+  display: inline-block;
+  padding: 5px;
+}
+
+aside section.categories ul li a {
+  color: orange;
+}
+
+body.page aside {
+  display: none;
+}
+
+#masthead nav a {
+  margin-right: 10%;
+}
+
+#masthead nav a#close-search {
+  display    : block;
+  margin     : 0 auto;
+  text-align : center;
+}
+
+#masthead nav input#search {
+  display    : block;
+  margin     : 5% auto 1% auto;
+  padding    : 1%;
+  width      : 98%;
+}
+
+#masthead span {
+  display: none;
+}
+
+main {
+  width: 100%;
+}
