@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title><%= site.name %></title>
-    <description><%= site.tagLine %> RSS Feed</description>
-    <link><%= site.fqdn %></link>
+    <title><%= wit.config.site.name %></title>
+    <description><%= wit.config.site.tagLine %> RSS Feed</description>
+    <link><%= wit.config.site.fqdn %></link>
     <lastBuildDate><%= pubDate %></lastBuildDate>
     <pubDate><%= pubDate %></pubDate>
 
@@ -11,7 +11,7 @@
     <item>
       <title><%= post.title %></title>
       <description><%= post.excerpt %></description>
-      <link><%= site.fqdn %><%= post.url %></link>
+      <link><%= wit.config.site.fqdn %><%= post.url %></link>
       <pubDate><%= post.date.datetime %></pubDate>
     </item>
     <% });%>

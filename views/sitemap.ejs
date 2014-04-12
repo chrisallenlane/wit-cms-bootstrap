@@ -6,7 +6,7 @@
 
   <% urlSet.forEach(function(url) { %>
   <url>
-    <loc><%= site.fqdn %><%= url.url %></loc>
+    <loc><%= wit.config.site.fqdn %><%= url.url %></loc>
     <lastmod><%= (url.date) ? url.date.datetime : pubDate  %></lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>

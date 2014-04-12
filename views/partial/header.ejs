@@ -4,14 +4,14 @@
     <title><%= title %></title>
     <meta charset='utf-8'>
     <meta name='viewport'  content='width=device-width'>
-    <meta name='author'    content='<%= site.author %>'>
+    <meta name='author'    content='<%= wit.config.site.author %>'>
     <% if (typeof description !== 'undefined') {%>
     <meta name='description' content='<%= description %>'>
     <% } %>
     <meta name="generator" content="wit-cms">
     <link rel='alternate'  type='application/rss+xml' title='RSS Feed' href='/feed'>
     <% if (typeof canonicalUrl !== 'undefined') { %>
-    <link rel='canonical'  href='<%= site.fqdn %><%= canonicalUrl %>'>
+    <link rel='canonical'  href='<%= wit.config.site.fqdn %><%= canonicalUrl %>'>
     <% } %>
     <link rel='stylesheet' href='/stylesheets/normalize.css'>
     <link rel='stylesheet' href='/stylesheets/main.css'>
@@ -22,8 +22,8 @@
     <div id='container'>
 
       <header id='masthead'>
-        <h1><a href='/'><%= site.name%></a>
-          <span><%= site.tagLine %></span>
+        <h1><a href='/'><%= wit.config.site.name%></a>
+          <span><%= wit.config.site.tagLine %></span>
         </h1>
 
         <nav>
