@@ -1,7 +1,7 @@
-<% if (nextPrev.previous) {%>
-<a class='newer-posts' href='?p=<%= nextPrev.previous %>'>&laquo; Newer Posts</a>
+<% if (page.pagination.previous) {%>
+<a class='newer-posts' href='?p=<%= page.pagination.previous %>'>&laquo; Newer Posts</a>
 <% } %>
 
-<% if (nextPrev.next) {%>
-<a class='older-posts' href='?p=<%= nextPrev.next %>'>Older Posts &raquo;</a>
+<% if (page.pagination.next) {%>
+<a class='older-posts' href='?p=<%= page.pagination.next %>'>Older Posts &raquo;</a>
 <% } %>

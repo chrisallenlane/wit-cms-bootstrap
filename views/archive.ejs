@@ -1,18 +1,18 @@
 <% include partial/header %>
 
 <h1 class='context'>Archive:
-  <%= date.year %>
+  <%= page.date.year %>
 
-  <% if(date.month) { %>
-  / <%= date.month %>
+  <% if(page.date.month) { %>
+  / <%= page.date.month %>
   <% } %>
 
-  <% if(date.day) { %>
-  / <%= date.day %>
+  <% if(page.date.day) { %>
+  / <%= page.date.day %>
   <% } %>
 </h1>
 
-<% if (posts.length === 0) { %>
+<% if (page.content.length === 0) { %>
 
   <article>
     <p>No posts found</p>
@@ -20,7 +20,7 @@
 
 <% } else { %>
 
-  <% posts.forEach(function(post) { %>
+  <% page.content.forEach(function(post) { %>
     <article>
       <hgroup>
         <h1><a href='<%= post.url %>'><%= post.title %></a></h1>

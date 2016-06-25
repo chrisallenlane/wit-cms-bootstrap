@@ -5,7 +5,7 @@
         <section class='categories'>
           <h3>Categories</h3>
           <ul>
-            <% Object.keys(wit.categories).sort().forEach(function(category) { %>
+            <% wit.categories.forEach(function(category) { %>
             <li><a href='/blog/category/<%= category %>'><%= category %></a></li>
             <% }); %>
           </ul>
@@ -14,7 +14,7 @@
         <section class='tags'>
           <h3>Tags</h3>
           <ul>
-            <% Object.keys(wit.tags).sort().forEach(function(tag) { %>
+            <% wit.tags.forEach(function(tag) { %>
             <li><a href='/blog/tag/<%= tag %>'><%= tag %></a></li>
             <% }); %>
           </ul>
@@ -23,21 +23,15 @@
         <section class='archive'>
           <h3>Archive</h3>
           <ul>
-            <% Object.keys(wit.archive).sort().forEach(function(year) { %>
-            <li><a href='/blog/archive/<%= year %>'><%= year %></a></li>
-            <% }); %>
+            <li><a href='/blog/archive/2016'</a>2016</li>
+            <li><a href='/blog/archive/2015'</a>2015</li>
+            <li><a href='/blog/archive/2014'</a>2014</li>
           </ul>
         </section>
       </aside>
 
-      <script src='/javascripts/vendor/jquery-1.11.0.min.js'></script>
-      <script src='/javascripts/vendor/hogan.min.js'></script>
-      <script src='/javascripts/lib/search.js'></script>
-      <script src='/javascripts/main.js'></script>
-
-      <% if (env === 'production') { %>
       <!-- @todo: put your Google Analytics code here -->
-      <% } %>
+
     </div>
   </body>
 </html>

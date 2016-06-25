@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html class='no-js'>
   <head>
-    <title><%= title %></title>
+    <title><%= page.title %></title>
     <meta charset='utf-8'>
-    <meta name='viewport'  content='width=device-width'>
-    <meta name='author'    content='<%= wit.config.site.author %>'>
-    <% if (typeof description !== 'undefined') {%>
-    <meta name='description' content='<%= description %>'>
+    <meta name='author'    content='<%= wit.params.author %>'>
+    <% if (page.description) {%>
+    <meta name='description' content='<%= page.description %>'>
     <% } %>
-    <meta name="generator" content="wit-cms">
+    <meta name='generator' content='wit-cms'>
     <link rel='alternate'  type='application/rss+xml' title='RSS Feed' href='/feed'>
-    <% if (typeof canonicalUrl !== 'undefined') { %>
-    <link rel='canonical'  href='<%= wit.config.site.fqdn %><%= canonicalUrl %>'>
+    <% if (page.url) { %>
+    <link rel='canonical'  href='<%= wit.params.fqdn %><%= page.url %>'>
     <% } %>
     <link rel='stylesheet' href='/stylesheets/normalize.css'>
     <link rel='stylesheet' href='/stylesheets/main.css'>
-    <link rel='stylesheet' href='/stylesheets/mobile.css' media='(max-device-width: 640px)'>
   </head>
 
-  <body class='<%= bodyClass %>'>
+  <body class='<%= page.title || '' %>'>
     <div id='container'>
 
       <header id='masthead'>
-        <h1><a href='/'><%= wit.config.site.name%></a>
-          <span><%= wit.config.site.tagLine %></span>
-        </h1>
+        <span><%= wit.params.tagLine %></span>
+        <h1><a href='/'><%= wit.params.name%></a></h1>
 
         <nav>
           <a href='/about'>About</a>
           <a href='/'>Blog</a>
           <a href='/contact'>Contact</a>
 
-          <input id='search' type='search' placeholder='search'>
-          <a id='close-search' href='javascript:void(0)'>[close search]</a>
+          <form method='get' action='/blog/search'>
+            <input id='search' type='search' placeholder='search' name='q'>
+          </form>
         </nav>
       </header>
 

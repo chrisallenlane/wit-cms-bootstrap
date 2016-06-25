@@ -1,6 +1,6 @@
 <% include partial/header %>
 
-<% if (posts.length === 0) { %>
+<% if (page.content.length === 0) { %>
 
   <article>
     <p>No posts found</p>
@@ -8,7 +8,7 @@
 
 <% } else { %>
 
-  <% posts.forEach(function(post) { %>
+  <% page.content.forEach(function(post) { %>
     <article>
       <hgroup>
         <h1><a href='<%= post.url %>'><%= post.title %></a></h1>

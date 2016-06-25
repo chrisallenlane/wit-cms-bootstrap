@@ -4,10 +4,10 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <% urlSet.forEach(function(url) { %>
+  <% page.content.forEach(function(url) { %>
   <url>
-    <loc><%= wit.config.site.fqdn %><%= url.url %></loc>
-    <lastmod><%= (url.date) ? url.date.datetime : pubDate  %></lastmod>
+    <loc><%= wit.params.fqdn %><%= url.url %></loc>
+    <lastmod><%= (url.date) ? url.date.datetime : page.date.pubDate  %></lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
