@@ -14,10 +14,12 @@
     <article>
       <hgroup>
       <h1><a href='<%= post.url %>'><%= post.title %></a></h1>
+        <% if (post.date) { %>
         <time datetime='<%= post.date.datetime %>'><%= post.date.pretty %></time>
+        <% } %>
       </hgroup>
 
-      <%- post.excerpt %>
+      <%- post.excerpt || post.content %>
 
     </article>
   <% }); %>
