@@ -31,7 +31,7 @@ File/Directory | Purpose
 ---------------|--------
 `app.js`       | The Express application entry-point.
 `bin`          | Contains executable scripts.
-`media`        | Intended to serve static post/page content. (_Not_ intended to serve "code", like stylesheets.).
+`media`        | Intended to serve static post/page content. (_Not_ intended to serve "code", like stylesheets.)
 `pages`        | Contains "page" content markdown files.
 `post`         | Contains "post" content markdown files.
 `public`       | Intended to serve static application assets, like stylesheets and JavaScript.
