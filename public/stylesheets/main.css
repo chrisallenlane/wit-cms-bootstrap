@@ -1,6 +1,5 @@
-/* globals */
 a {
-  color: royalblue;
+  color: cornflowerblue;
   text-decoration: none;
 }
 
@@ -8,105 +7,51 @@ a:hover {
   text-decoration: underline;
 }
 
-body {
-  font-size: small;
-  margin: 0 auto;
-  max-width: 1000px;
-}
-
-#container {
-  float     : left;
-  margin    : 0 5%;
-  min-width : 90%;
+li code,
+p code {
+  background-color: #ddd;
+  padding: 0.25rem;
+  color: #333;
 }
 
 html {
-  background-color: ghostwhite;
-  color: #333;
-  font-family: verdana;
+  color: #444;
+  font-family: verdana, sans-serif;
   line-height: 2;
   margin: 0 auto;
   padding: 0;
 }
 
-/* masthead */
-#masthead {
-  margin-bottom: 20px;
+body {
+  font-size: small;
+  max-width: 1000px;
 }
 
-#masthead nav {
-  margin-top: 20px;
+pre {
+  background: #002b36;
+  color: #839496;
+  padding: 1rem;
 }
 
-#masthead nav a {
-  display: inline-block;
-  margin-right: 2.5%;
-}
-
-#masthead h1 a {
-  color: black;
+#masthead h1 {
+  border-bottom: 1px dotted gray;
   font-weight: normal;
   letter-spacing: 1px;
 }
 
-#masthead nav form {
-  float: right;
-}
-
-#masthead nav form input {
-  background-color : transparent;
-  border           : 1px solid gray;
-  padding          : 2px 10px;
+#masthead nav input#search {
+  background-color: transparent;
+  border: 1px solid silver;
 }
 
 #masthead span {
-  float: right;
-  font-size: small;
+  font-size: x-small;
   letter-spacing: 1px;
-}
-
-/* main content */
-main {
-  float: left;
-  width: 80%;
-}
-
-main a.newer-posts {
-  float: left;
-  margin: 0 0 5% 0;
-}
-
-main a.older-posts {
-  float: right;
-  margin: 0 0 5% 0;
-}
-
-main article {
-  margin-bottom: 5%;
-}
-
-main article pre code {
-  width: 100%;
-}
-
-main article code {
-  color: #888;
-  background-color: #eee;
-  display: inline-block;
-  padding: 0 .5em;
-}
-
-main article a code {
-  color: royalblue;
-}
-
-main article .gist {
-  max-width: 1000px;
 }
 
 main article h1 {
   font-weight: normal;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 main article h2 {
@@ -120,12 +65,12 @@ main article h3 {
 }
 
 main article h4 {
-  color: gray;
+  color: silver;
   font-size: small;
 }
 
 main article hgroup time {
-  color: gray;
+  color: #777;
   font-size: small;
 }
 
@@ -133,16 +78,14 @@ main h1.context {
   font-weight: normal;
 }
 
-/* sidebar */
 aside {
-  float: right;
   font-size: x-small;
-  width: 15%;
 }
 
 aside h3 {
   font-size: medium;
   font-weight: normal;
+  margin: 2em 0 0 0;
 }
 
 aside ul {

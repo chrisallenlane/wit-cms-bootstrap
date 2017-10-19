@@ -1,37 +1,35 @@
 <!DOCTYPE html>
-<html class='no-js'>
+<html>
   <head>
-    <title><%= page.title %></title>
+    <title><%= page.title %> | wit-bootstrap</title>
     <meta charset='utf-8'>
+    <meta name='viewport'  content='width=device-width'>
     <meta name='author'    content='<%= wit.params.author %>'>
     <% if (page.description) {%>
     <meta name='description' content='<%= page.description %>'>
     <% } %>
-    <meta name='generator' content='wit-cms'>
     <link rel='alternate'  type='application/rss+xml' title='RSS Feed' href='/feed'>
     <% if (page.url) { %>
     <link rel='canonical'  href='<%= wit.params.fqdn %><%= page.url %>'>
     <% } %>
-    <link rel='stylesheet' href='/stylesheets/normalize.css'>
-    <link rel='stylesheet' href='/stylesheets/main.css'>
+    <link rel='stylesheet' href='/stylesheets/app.css?build=<%= Date.now() %>'>
   </head>
 
-  <body class='<%= page.title || '' %>'>
-    <div id='container'>
+  <body class='<%= page.name %>'>
 
-      <header id='masthead'>
+    <header id='masthead'>
+      <h1><a href='/'><%= wit.params.name %></a>
         <span><%= wit.params.tagLine %></span>
-        <h1><a href='/'><%= wit.params.name%></a></h1>
+      </h1>
 
-        <nav>
-          <a href='/about'>About</a>
-          <a href='/'>Blog</a>
-          <a href='/contact'>Contact</a>
+      <nav>
+        <a href='/about'>About</a>
+        <a href='/'>Blog</a>
 
-          <form method='get' action='/blog/search'>
-            <input id='search' type='search' placeholder='search' name='q'>
-          </form>
-        </nav>
-      </header>
+        <form method='get' action='/blog/search'>
+          <input id='search' type='search' placeholder='search' name='q'>
+        </form>
+      </nav>
+    </header>
 
-      <main>
+    <main>
