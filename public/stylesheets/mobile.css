@@ -1,0 +1,70 @@
+@media (max-width: 999px) {
+
+  article {
+    margin: 4em 0;
+  }
+
+  article:first-child {
+    margin-top: 0;
+  }
+
+  aside section.about,
+  aside section.archive {
+    display: none;
+  }
+
+  aside section.categories ul li,
+  aside section.tags ul li {
+    display: inline-block;
+    padding: 1.5em;
+    margin: 0.5em;
+    border: 1px dotted gray;
+  }
+
+  body {
+    margin: 5%;
+  }
+
+  #masthead h1 {
+    margin-bottom: 0;
+  }
+
+  #masthead nav {
+    margin: 1em auto 3em auto;
+  }
+
+  #masthead nav a {
+    display: inline-block;
+    line-height: 4em;
+    margin: 0;
+    text-align: center;
+    width: 49.5%;
+  }
+
+  #masthead nav input#search {
+    display    : block;
+    line-height: 4em;
+    text-indent: 1em;
+    width      : 100%;
+  }
+
+  #masthead span {
+    display: none;
+  }
+
+  main article img {
+    display: block;
+    margin: 2em auto;
+    max-width: 100%;
+  }
+
+  main article iframe {
+    max-width: 100%;
+  }
+
+  /* Hide tags and categories on non-blog pages */
+  body.about aside section {
+    display: none;
+  }
+
+}

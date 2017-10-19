@@ -3,7 +3,7 @@
 "author"     : "Chris Allen Lane",
 "categories" : ["intro"],
 "tags"       : ["views", "front-matter", "layout"],
-"date"       : "2015-01-27"
+"date"       : "2015-02-02"
 }}}
 
 

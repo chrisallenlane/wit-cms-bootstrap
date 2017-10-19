@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+// vim: set ft=javascript:
+
+/* concatenates and uglifies CSS files */
+
+const clean = require('clean-css');
+const fs    = require('fs');
+const path  = require('path');
+
+// locate the stylesheet directory
+const cssDir = path.resolve(__dirname, '..', 'public/stylesheets');
+
+// stylesheets to concatenate (ordered)
+const files = [
+  'normalize.css',
+  'main.css',
+  'desktop.css',
+  'mobile.css',
+  'solarized-dark.css',
+];
+
+// aggregate the style blob
+var css = '';
+files.forEach(function (file) {
+  css += fs.readFileSync(path.resolve(cssDir, file), 'utf8');
+});
+
+// minify
+const minified = new clean({}).minify(css).styles;
+
+// write to file
+fs.writeFileSync(path.resolve(cssDir, 'app.css'), minified);

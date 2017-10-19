@@ -3,7 +3,7 @@
 "author"     : "Chris Allen Lane",
 "categories" : [ "intro" ],
 "tags"       : [ "architecture" ],
-"date"       : "2016-01-28"
+"date"       : "2014-01-28"
 }}}
 
 From an architectural standpoint, it's important to note that `wit-cms`

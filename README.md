@@ -1,24 +1,144 @@
 wit-bootstrap
 =============
-This is an example blog built using [wit-cms][].
+`wit-bootstrap` is an example blog built with [Express][] and [wit-cms][]. It
+is to be used a starting point when building a website with `wit-cms`.
 
-To use this boilerplate:
 
-1. Clone this repository
-2. Install the dependencies (`npm i`)
-3. Start the app (`node app.js`)
-4. Get the feel for the example site in a browser
-5. Start hacking code!
+Usage
+-----
+Clone this repository and start the local webserver to become acquainted with
+`wit-cms`:
 
-As a "hacking" starting point, you'll want to replace the content in the
-`pages` and `posts` directories with your own content, making certain to
-preserve the front-matter on each page/post. (You can modify the values, of
-course.)
+```sh
+npm run start
+```
 
-From there, "theming" may be accomplished by modifying the files in the `views`
-and `public` directories.
+The webserver will bind to port `3000` by default, and will be available at
+`http://localhost:3000`.
 
-`wit-bootstrap` is minimalist and un-opinionated, so you're free to continue
-modifying from there without fear of breaking the `wit-cms` core.
+The example blog posts contain tips regarding using `wit-cms`. You may want to
+read them.
 
-[wit-cms]: https://github.com/chrisallenlane/wit-cms 
+After you've become acqainted with this example website, you may freely modify
+it to suit your needs.
+
+
+Layout
+------
+`wit-bootstrap` contains the following files and directories:
+
+File/Directory | Purpose 
+---------------|--------
+`app.js`       | The Express application entry-point.
+`bin`          | Contains executable scripts.
+`media`        | Intended to serve static post/page content. (_Not_ intended to serve "code", like stylesheets.).
+`pages`        | Contains "page" content markdown files.
+`post`         | Contains "post" content markdown files.
+`public`       | Intended to serve static application assets, like stylesheets and JavaScript.
+`views`        | Contains Express views.
+
+
+Configuring
+-----------
+This repository will require minor configuration changes before production use.
+
+### app.js ###
+A `config` object is defined in `app.js`. You'll likely want to update some of
+its values:
+
+```javascript
+// wit configs
+const config = {
+
+  // website metadata, a la Wordpress
+  params: {
+    author  : 'John Doe',
+    fqdn    : 'https://example.com',
+    name    : 'example.com',
+    tagLine : 'Built with wit-bootstrap',
+  },
+
+  // syntax highlighting configuration
+  remarkable: {
+    highlight: function (str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return hljs.highlight(lang, str).value;
+        } catch (err) {}
+
+      }
+      try {
+        return hljs.highlightAuto(str).value;
+      } catch (err) {}
+      return '';
+    }
+  },
+};
+```
+
+You may likewise freely attach any additional values to `config.params` to make
+them available to the `wit` object.
+
+`wit-bootsrap` is configured by default with syntax-highlighting support
+through [highlight.js][hljs] via `params.remarkable`.
+
+### bin/minify-css ###
+`bin/minify-css` contains an array of stylesheets that are to be concatenated
+and minified:
+
+```javascript
+// stylesheets to concatenate (ordered)
+const files = [
+  'normalize.css',
+  'main.css',
+  'desktop.css',
+  'mobile.css',
+  'solarized-dark.css', // highlighting styles for highlight.js
+];
+```
+
+Modify those as necessary. Note that array order is important - stylesheets
+will be concatenated in the order in which they are specified. (See: <a
+href='#building'>Building</a>)
+
+### Static File Serving ###
+By default, the local webserver is configured only to serve static files in the
+development environment:
+
+```javascript
+// only use the static-file middleware on the dev environment
+if ('development' == app.get('env')) {
+  app.use(express.static(path.join(__dirname, 'public')));
+  app.use('/media', express.static('media'));
+}
+```
+
+In production, it is recommended to use a webserver like [Apache][], [Nginx][],
+or [Caddy][] for serving static files.
+
+
+Building
+--------
+By default, `wit-bootstrap` defines a single build task, which concatenates and
+minifies all stylesheets specified in `bin/minify-css`:
+
+```sh
+npm run build
+```
+
+By default, the combined stylesheets will be saved to
+`public/stylesheets/app.css`.
+
+
+Extending
+---------
+`wit-cms` is for programmers, and `wit-bootstrap` is ultimately just an Express
+application. You may freely modify it as you would any other application.
+
+
+[Apache]:  https://httpd.apache.org/
+[Caddy]:   https://caddyserver.com/
+[Express]: https://expressjs.com/
+[Nginx]:   https://www.nginx.com/
+[hljs]:    https://highlightjs.org/ 
+[wit-cms]: https://github.com/chrisallenlane/wit-cms
