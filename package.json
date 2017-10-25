@@ -2,7 +2,7 @@
   "name": "wit-bootstrap",
   "description": "An example site built around wit-cms",
   "license": "MIT",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/chrisallenlane/wit-bootstrap"
