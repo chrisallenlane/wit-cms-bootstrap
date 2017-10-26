@@ -26,10 +26,11 @@ const config = {
 
   // website metadata, a la Wordpress
   params: {
-    author  : 'John Doe',
-    fqdn    : 'https://example.com',
-    name    : 'example.com',
-    tagLine : 'Built with wit-bootstrap',
+    author   : 'John Doe',
+    fqdn     : 'https://example.com',
+    name     : 'example.com',
+    tagLine  : 'Built with wit-bootstrap',
+    appStart : Date.now(), // for stylesheet cache-busting
   },
 
   // syntax highlighting configuration

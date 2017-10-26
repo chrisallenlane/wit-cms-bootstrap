@@ -12,7 +12,7 @@
     <% if (page.url) { %>
     <link rel='canonical'  href='<%= wit.params.fqdn %><%= page.url %>'>
     <% } %>
-    <link rel='stylesheet' href='/stylesheets/app.css?build=<%= Date.now() %>'>
+    <link rel='stylesheet' href='/stylesheets/app.css?build=<%= wit.params.appStart %>'>
   </head>
 
   <body class='<%= page.name %>'>
