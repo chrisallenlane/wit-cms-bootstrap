@@ -21,5 +21,3 @@ skim through them. They contain some useful "getting started" information for
 users that are new to `wit-cms`.
 
 Happy blogging!
-
-[wit-cms]: https://www.npmjs.com/package/wit-cms
