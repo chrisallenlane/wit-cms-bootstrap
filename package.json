@@ -18,18 +18,18 @@
     "laxbreak": true
   },
   "dependencies": {
-    "debug": "~3.1.0",
-    "ejs": "~2.5.7",
-    "express": "~4.16.1",
-    "highlight.js": "^9.12.0",
-    "morgan": "~1.9.0",
-    "pm2": "^2.7.1",
-    "serve-favicon": "~2.4.5",
-    "wit-cms": "^4.1.4"
+    "debug": "~4.1.0",
+    "ejs": "~2.6.1",
+    "express": "~4.16.4",
+    "highlight.js": "^9.13.1",
+    "morgan": "~1.9.1",
+    "pm2": "^3.2.4",
+    "serve-favicon": "~2.5.0",
+    "wit-cms": "^4.1.7"
   },
   "devDependencies": {
-    "clean-css": "4.1.9",
+    "clean-css": "4.2.1",
     "faucet": "0.0.1",
-    "jshint": "2.9.5"
+    "jshint": "2.9.7"
   }
 }
