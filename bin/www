@@ -7,7 +7,7 @@
  */
 
 var app   = require('../app');
-var debug = require('debug')('wit-bootstrap:server');
+var debug = require('debug')('wit-cms-bootstrap:server');
 var http  = require('http');
 
 /**

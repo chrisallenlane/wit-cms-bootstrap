@@ -1,6 +1,6 @@
-wit-bootstrap
-=============
-`wit-bootstrap` is an example blog built with [Express][] and [wit-cms][]. It
+wit-cms-bootstrap
+=================
+`wit-cms-bootstrap` is an example blog built with [Express][] and [wit-cms][]. It
 is to be used a starting point when building a website with `wit-cms`.
 
 
@@ -25,7 +25,7 @@ it to suit your needs.
 
 Layout
 ------
-`wit-bootstrap` contains the following files and directories:
+`wit-cms-bootstrap` contains the following files and directories:
 
 File/Directory | Purpose 
 ---------------|--------
@@ -55,32 +55,14 @@ const config = {
     author  : 'John Doe',
     fqdn    : 'https://example.com',
     name    : 'example.com',
-    tagLine : 'Built with wit-bootstrap',
+    tagLine : 'Built with wit-cms-bootstrap',
   },
 
-  // syntax highlighting configuration
-  remarkable: {
-    highlight: function (str, lang) {
-      if (lang && hljs.getLanguage(lang)) {
-        try {
-          return hljs.highlight(lang, str).value;
-        } catch (err) {}
-
-      }
-      try {
-        return hljs.highlightAuto(str).value;
-      } catch (err) {}
-      return '';
-    }
-  },
 };
 ```
 
 You may likewise freely attach any additional values to `config.params` to make
 them available to the `wit` object.
-
-`wit-bootsrap` is configured by default with syntax-highlighting support
-through [highlight.js][hljs] via `params.remarkable`.
 
 ### bin/minify-css ###
 `bin/minify-css` contains an array of stylesheets that are to be concatenated
@@ -105,7 +87,7 @@ href='#building'>Building</a>)
 Change the logging application name in the following line of `bin/www`:
 
 ```javascript
-var debug = require('debug')('wit-bootstrap:server');
+var debug = require('debug')('wit-cms-bootstrap:server');
 ```
 
 ### Static File Serving ###
@@ -126,7 +108,7 @@ or [Caddy][] for serving static files.
 
 Building
 --------
-By default, `wit-bootstrap` defines a single build task, which concatenates and
+By default, `wit-cms-bootstrap` defines a single build task, which concatenates and
 minifies all stylesheets specified in `bin/minify-css`:
 
 ```sh
@@ -139,7 +121,7 @@ By default, the combined stylesheets will be saved to
 
 Extending
 ---------
-`wit-cms` is for programmers, and `wit-bootstrap` is ultimately just an Express
+`wit-cms` is for programmers, and `wit-cms-bootstrap` is ultimately just an Express
 application. You may freely modify it as you would any other application.
 
 
